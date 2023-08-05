@@ -5,7 +5,7 @@ app.get('/', (req, res) => {
     res.send('Hello, world!');
 });
 
-const items = ['apple', 'banana', 'orange'];
+const items = ['apple', 'banana', 'orange', 'peach'];
 app.get('/items', (req, res) => {
     res.json(items);
 });
