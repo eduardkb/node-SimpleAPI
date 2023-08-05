@@ -13,12 +13,12 @@ app.get('/', (req, res) => {
     }
 });
 
-const items = ['apple', 'banana', 'orange', 'peach'];
+const items = ['apple', 'banana', 'orange', 'melancia'];
 app.get('/items', (req, res) => {
     res.json(items);
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 80;
 console.log('>>> DEBUG_PORT_VAR:', port);
 
 app.listen(port, () => {
