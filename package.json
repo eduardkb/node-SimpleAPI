@@ -4,7 +4,7 @@
   "description": "a simple api in node.js",
   "main": "index.js",
   "scripts": {
-    "run": "server.js"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
