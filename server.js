@@ -18,7 +18,7 @@ app.get('/items', (req, res) => {
     res.json(items);
 });
 
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 3000;
 console.log('>>> DEBUG_PORT_VAR:', port);
 
 app.listen(port, () => {
