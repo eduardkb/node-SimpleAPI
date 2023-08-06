@@ -6,7 +6,7 @@ console.log('>>> DEBUG_NAME_VAR:', sName);
 
 app.get('/', (req, res) => {
     if (sName === 'default') {
-        res.send('Hello, world!');
+        res.send('Hello, My Webpage!');
     }
     else {
         res.send(`Hi, ${sName}`)
