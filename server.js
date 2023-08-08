@@ -8,25 +8,30 @@ app.get('/', (req, res) => {
 <html>
 
 <head>
-  <title>EKB Webpage</title>
+  <title>My Webpage</title>
 </head>
 
-<body style="background-color: #a3c2c2;">
-  <h3>EKB Welcome</h3>
-  <BR/>
-  <BR/>
-  <strong>Variables:</strong>
-  <ul>
-    <li><strong>NAME Var Content</strong><span>: ${sName}</span></li>
-    <li><strong>CONN Var Content</strong><span>: ${sConnStr}</span></li>
-  </ul>
-  <strong>API's</strong>
-  <ul>
-      <li><strong>API 1</strong><span>: /items</span></li>
-      <li><strong>API 2</strong><span>: <under development></span></li>      
-  </ul>
+<body style="background-color: #ccccb3;">  
+  <header>
+    <h3>EKB Welcome</h3>
+  </header>
+  <main>
+      <hr>
+      <strong>Variables:</strong>
+      <ul>
+        <li><strong>NAME Var Content</strong><span>: ${sName}</span></li>
+        <li><strong>CONN Var Content</strong><span>: ${sConnStr}</span></li>
+      </ul>
+      <strong>API's</strong>
+      <ul>
+          <li><strong>API 1</strong><span>: /items</span></li>
+          <li><strong>API 2</strong><span>: <under development></span></li>      
+      </ul>  
+  </main>
+  <footer>
+      <p><small>By: EduardKB</small></p>
+  </footer>
 </body>
-
 </html>
 `
   res.send(sHtml);
@@ -46,3 +51,4 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+
