@@ -8,11 +8,11 @@ app.get('/', (req, res) => {
 <html>
 
 <head>
-  <title>EKB Welcome Title</title>
+  <title>EKB Webpage</title>
 </head>
 
-<body style="background-color: #99dbe9;">
-  <h3>EKB Welcome Page</h3>
+<body style="background-color: #cc6600;">
+  <h3>EKB Welcome</h3>
   <BR/>
   <BR/>
   <strong>Variables:</strong>
@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
     res.send(sHtml);
 });
 
-const items = ['Copo', 'Mouse', 'Relogio', 'Fone'];
+const items = ['Lamp', 'Heater', 'Humidifyer', 'Courtain'];
 app.get('/items', (req, res) => {
     const aRet = {
         status: "Success",
