@@ -1,9 +1,9 @@
-const express = require('express');
+const express = require("express");
 const app = express();
 
-const sName = process.env.NAME || 'NO_NAME_VALUE';
-const sConnStr = process.env.CONN || 'NO_CONN_VALUE';
-app.get('/', (req, res) => {
+const sName = process.env.NAME || "NO_NAME_VALUE";
+const sConnStr = process.env.CONN || "NO_CONN_VALUE";
+app.get("/", (req, res) => {
   var sHtml = `
 <html>
 
@@ -33,22 +33,36 @@ app.get('/', (req, res) => {
   </footer>
 </body>
 </html>
-`
+`;
   res.send(sHtml);
 });
 
-const items = ['Lamp', 'Heater', 'Humidifyer', 'Courtain'];
-app.get('/items', (req, res) => {
+const items = ["Lamp", "Heater", "Humidifyer", "Courtain"];
+app.get("/items", (req, res) => {
   const aRet = {
     status: "Success",
     code: "200",
-    result: items
-  }
+    result: items,
+  };
   res.json(aRet);
 });
 
+/////////////////////////////////////////////////////
+// AZ Read Kv Secret with Browser Interactive Auth.
+// READ ./azGetSecret.js to configure variables
+const getAzSecret = require("./azGetSecret");
+
+app.get("/getSecret", (req, res) => {
+  getSecret(res);
+});
+
+async function getSecret(res) {
+  var secret = { status: 200, message: "temp value" };
+  secret = await getAzSecret("jwtsignature");
+  return res.send(secret);
+}
+/////////////////////////////////////////////////////
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
-
